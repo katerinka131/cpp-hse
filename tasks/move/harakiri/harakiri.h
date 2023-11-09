@@ -1,16 +1,33 @@
 #pragma once
 
 #include <string>
-
-// Should not allow reuse and yell under sanitizers.
-// Fix the interface and implementation.
-// AwesomeCallback should add "awesomeness".
+#include <utility>
 
 class OneTimeCallback {
 public:
     virtual ~OneTimeCallback() = default;
-    virtual std::string operator()() = 0;
+
+    std::string operator()() const&& {
+        return Run();
+    }
+    OneTimeCallback& operator=(const OneTimeCallback&) = delete;
+    OneTimeCallback& operator=(OneTimeCallback&&) = delete;
+
+private:
+    virtual std::string Run() const = 0;
 };
 
-// Implement ctor, operator(), maybe something else...
-class AwesomeCallback : public OneTimeCallback {};
+class AwesomeCallback : public OneTimeCallback {
+public:
+    explicit AwesomeCallback(std::string str) : str_(std::move(str)) {
+    }
+
+private:
+    std::string Run() const override {
+        auto ans = str_ + "awesomeness";
+        delete this;
+        return ans;
+    }
+
+    std::string str_;
+};

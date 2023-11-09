@@ -109,7 +109,7 @@ struct Int {
 
     static void UpdateCounter() {
         ++counter;
-        if (counter == max_value) {
+        if (counter >= max_value) {
             throw std::logic_error("Fail");
         }
     }
@@ -132,6 +132,8 @@ TEST_CASE("Copy fails") {
     TransformIf(
         data.begin(), data.end(), [](const Int&) { return true; },
         [](Int& val) { val.x *= val.x; });
+    std::cout << "fail not in transform\n";
+    Int::Reset(100);
     for (size_t i = 0; i < data.size(); ++i) {
         REQUIRE(static_cast<size_t>(data[i].x) == (i + 1) * (i + 1));
     }

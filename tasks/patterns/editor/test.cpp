@@ -47,6 +47,7 @@ TEST_CASE("Backspace", "[Editor]") {
     REQUIRE(editor.GetText() == "cb");
 }
 
+
 TEST_CASE("Undo/Redo typing", "[Editor]") {
     Editor editor;
     editor.Type('a');
