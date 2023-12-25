@@ -161,6 +161,34 @@ assignments:
     - task:  scheme/tidy
       score: 100
 
+- title:    09-baby-threads
+  start:    16-11-2023 00:00
+  deadline: 29-11-2023 23:59
+  tasks:
+    - task: baby-threads/is-prime
+      score: 100
+    - task: baby-threads/reduce
+      score: 100
+    - task: baby-threads/hash-table
+      score: 100
+    - task: baby-threads/subset-sum
+      score: 100
+
+- title:    10-condition-variables
+  start:    24-11-2023 00:00
+  deadline: 06-12-2023 23:59
+  tasks:
+    - task: condvars/timerqueue
+      score: 100
+    - task: condvars/semaphore
+      score: 100
+    - task: condvars/rw-lock
+      score: 100
+    - task: condvars/buffered-channel
+      score: 100
+    - task: condvars/unbuffered-channel
+      score: 100
+
 - title:    bonus
   start:    09-09-2023 18:00
   deadline: 23-12-2023 23:59
@@ -182,3 +210,5 @@ assignments:
     score: 500
   - task: bonus/functional-world
     score: 200
+  - task: bonus/hack-cpp-1.0
+    score: 100

@@ -26,9 +26,10 @@ scoring:
   - name: bonus
     weight: 1.0
     policy: hard
+    maxScore: 1300
 
   defaultGroup: weekly
-  finalDeadline: 31-12-2023 23:59
+  finalDeadline: 30-12-2023 23:59
   retakePenalty: 0.6
 
 
@@ -161,9 +162,72 @@ assignments:
     - task:  scheme/tidy
       score: 100
 
+- title:    09-baby-threads
+  start:    16-11-2023 00:00
+  deadline: 30-11-2023 23:59
+  tasks:
+    - task: baby-threads/is-prime
+      score: 100
+    - task: baby-threads/reduce
+      score: 100
+    - task: baby-threads/hash-table
+      score: 100
+    - task: baby-threads/subset-sum
+      score: 100
+
+- title:    10-condition-variables
+  start:    24-11-2023 00:00
+  deadline: 06-12-2023 23:59
+  tasks:
+    - task: condvars/timerqueue
+      score: 100
+    - task: condvars/semaphore
+      score: 100
+    - task: condvars/rw-lock
+      score: 100
+    - task: condvars/buffered-channel
+      score: 100
+    - task: condvars/unbuffered-channel
+      score: 100
+
+- title:    11-jpeg-decoder
+  start:    27-11-2023 00:00
+  deadline: 30-12-2023 23:59
+  group:    large
+  tasks:
+    - task: jpeg-decoder/huffman
+      score: 200
+    - task: jpeg-decoder/fftw
+      score: 150
+    - task: jpeg-decoder/baseline
+      score: 250
+    - task: jpeg-decoder/faster
+      score: 150
+    - task: jpeg-decoder/fuzzing
+      score: 250
+    - task: jpeg-decoder/progressive
+      score: 250
+
+- title:    12-lock-free
+  start:    02-12-2023 16:00
+  deadline: 14-12-2023 23:59
+  tasks:
+    - task: lock-free/futex
+      score: 100
+    - task: lock-free/rw-spinlock
+      score: 100
+    - task: lock-free/mpsc-stack
+      score: 100
+    - task: lock-free/fast-queue
+      score: 100
+    - task: lock-free/hazard-ptr
+      score: 100
+    - task: lock-free/sync-map
+      score: 100
+
 - title:    bonus
   start:    09-09-2023 18:00
-  deadline: 23-12-2023 23:59
+  deadline: 30-12-2023 23:59
   group:    bonus
   tasks:
   - task: bonus/bad-hash
@@ -182,3 +246,7 @@ assignments:
     score: 500
   - task: bonus/functional-world
     score: 200
+  - task: bonus/hack-cpp-1.0
+    score: 100
+  - task: bonus/bonus
+    score: 0

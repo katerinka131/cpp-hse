@@ -16,7 +16,7 @@ add_subdirectory(lock-free)
 # Big homeworks
 add_subdirectory(smart-ptrs)
 add_subdirectory(scheme)
-# add_subdirectory(jpeg-decoder)
+add_subdirectory(jpeg-decoder)
 
 # Bonus
 add_subdirectory(bonus)

@@ -2,6 +2,7 @@
 
 #include "functions.h"
 
+#include <array>
 #include <vector>
 #include <string>
 #include <functional>

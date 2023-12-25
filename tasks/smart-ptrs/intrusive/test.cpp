@@ -216,6 +216,17 @@ TEST_CASE("Observers") {
         REQUIRE((*p).value == 3);
     }
 
+    SECTION("Dereference 2") {
+        const IntrusivePtr<MyInt> p(new MyInt(24));
+        REQUIRE((*p).value == 24);
+        *p = 1;
+        IntrusivePtr<MyInt> ptr1(p);
+        IntrusivePtr<MyInt> ptr2(p);
+        IntrusivePtr<MyInt> ptr3(p);
+        ptr2 = std::move(ptr3);
+        REQUIRE((*p).value == 1);
+    }
+
     SECTION("operator bool") {
         static_assert(std::is_constructible<bool, IntrusivePtr<MyString>>::value, "");
         static_assert(!std::is_convertible<IntrusivePtr<MyString>, bool>::value, "");
